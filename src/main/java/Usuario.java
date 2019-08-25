@@ -12,7 +12,7 @@ public class Usuario {
 		System.out.println("Probando referencia a método estático");
 	}
 
-	public void ObtenerReferenciaAMetodoParticular() {
+	public void obtenerReferenciaAMetodoParticular() {
 		System.out.println("Probando referencia a método de objeto particular");
 	}
 
