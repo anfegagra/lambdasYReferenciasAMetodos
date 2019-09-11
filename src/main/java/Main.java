@@ -44,5 +44,17 @@ public class Main {
 
         //usuarios.forEach(u -> u.mostrarNombre());
         usuarios.forEach(Usuario::mostrarNombre);
+
+        // Referencia a un constructor		Class::new			String::new			() -> new String()
+
+        Usuario2 usuario2 = new Usuario2() {
+            @Override
+            public Usuario crear(String nombre) {
+                return new Usuario(nombre);
+            }
+        };
+
+        Usuario2 usuario21 = (nom -> new Usuario(nom));
+        Usuario2 usuario22 = Usuario::new;
     }
 }
