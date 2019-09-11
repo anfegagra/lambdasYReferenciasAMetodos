@@ -1,5 +1,8 @@
 package main.java;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,5 +27,22 @@ public class Main {
         Trabajo trabajoLambda1 = () -> usuario.obtenerReferenciaAMetodoParticular();
         Trabajo trabajoMetodoReferencia1 = usuario::obtenerReferenciaAMetodoParticular;
         trabajoMetodoReferencia1.hacerAlgo();
+
+        /* Referencia a un método de instancia	Class::metodoInstancia	String::toString    s -> s.toString()
+           de un objeto arbitrario de un tipo
+           particular */
+
+        TrabajoString trabajoStringLambda = (palabra -> palabra.toUpperCase());
+        TrabajoString trabajoStringReferenciaMetodo = String::toUpperCase;
+        System.out.println(trabajoStringReferenciaMetodo.hacerAlgo("pipe"));
+
+        List<Usuario> usuarios = new ArrayList<>();
+        usuarios.add(new Usuario("pipe"));
+        usuarios.add(new Usuario("david"));
+        usuarios.add(new Usuario("pao"));
+        usuarios.add(new Usuario("laura"));
+
+        //usuarios.forEach(u -> u.mostrarNombre());
+        usuarios.forEach(Usuario::mostrarNombre);
     }
 }
